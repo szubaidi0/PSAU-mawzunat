@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="لوحة بيانات موزونات المقبولين لطلبة المنح بجامعة الأمير سطام بن عبد العزيز - إحصائيات وبيانات القبول">
+  <meta name="keywords" content="جامعة الأمير سطام, منح دراسية, موزونات, قبول, PSAU">
+  <title>موزونات المقبولين - جامعة الأمير سطام بن عبد العزيز</title>
+  <link rel="stylesheet" href="design.css">
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+
+  <!-- ==========================================
+       Disclaimer Modal
+       ========================================== -->
+  <div class="modal-overlay" id="disclaimerModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 class="modal-title">تنبيهات <span class="emoji">⚠️</span></h2>
+      </div>
+      <div class="modal-divider"></div>
+      <ol class="modal-list">
+        <li class="modal-list-item">
+          <span class="modal-list-number">1</span>
+          <p class="modal-list-text">جميع النسب المذكورة في الملف مجرد اجتهادات من الطلاب وليس لها صلة بالنسب الحقيقية
+            أو أي ضمانات رسمية من الجامعة، والجامعات لا تعلن النسب.</p>
+        </li>
+        <li class="modal-list-item">
+          <span class="modal-list-number">2</span>
+          <p class="modal-list-text">هذه النسب لا تعني بالضرورة أقل نسبة قبلتها الجامعات وإنما مجرد إحصاء للطلاب
+            المشاركين في مجموعة آرام ومجموعة طالب المنح بجامعة الأمير سطام بن عبد العزيز.</p>
+        </li>
+        <li class="modal-list-item">
+          <span class="modal-list-number">3</span>
+          <p class="modal-list-text">عدم وجود جنسية في جامعة معينة لا يعني أن الجامعة لا تقبل منها، بل عدم توفر معلومات
+            عنها.</p>
+        </li>
+        <li class="modal-list-item">
+          <span class="modal-list-number">4</span>
+          <p class="modal-list-text">عدم وجود تخصص معين في جامعة معينة لا يعني أنه ممنوع، بل عدم توفر معلومات عنه
+            (يستثنى من ذلك التخصصات الصحية فهي ممنوعة).</p>
+        </li>
+        <li class="modal-list-item">
+          <span class="modal-list-number">5</span>
+          <p class="modal-list-text">اطمحوا لأعلى موزونة ممكنة، لأن القبول تنافسي ويختلف بحسب المتقدمين كل عام.</p>
+        </li>
+        <li class="modal-list-item">
+          <span class="modal-list-number">6</span>
+          <p class="modal-list-text">بعض النسب المنخفضة قد لا تعتمد اعتماداً مباشراً على تنافس الموزونات، لأنها بعيدة كل
+            البعد عن المتوسط الطبيعي، ولا يمكن تفسير هذا الأمر إلا أنه رزقٌ ساقه الله إليهم، فتوكلوا على الله ولا
+            تيأسوا، وخذوا بكل الأسباب المشروعة للوصول إلى أعلى موزونة ممكنة.</p>
+        </li>
+        <li class="modal-list-item">
+          <span class="modal-list-number">7</span>
+          <p class="modal-list-text">إِنْ أَحْسَنَّا فَمِنَ الله، وَإِنْ أَسَأْنَا فَمِنْ أَنْفُسِنَا وَالشَّيْطَان.</p>
+        </li>
+      </ol>
+      <button class="modal-close-btn" id="closeModal" onclick="closeDisclaimer()">
+        إغلاق التنبيه ✕
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       Landing Page
+       ========================================== -->
+  <div class="landing-page" id="landingPage">
+    <div class="landing-content">
+      <div class="landing-wrapper">
+        <!-- Right Side: Text & Buttons (appears first in RTL) -->
+        <div class="landing-text-section">
+          <h1 class="landing-main-title">موزونات المقبولين لطلبة المنح</h1>
+          <p class="landing-subtitle">لجامعة الأمير سطام بن عبد العزيز</p>
+          <div class="landing-buttons">
+            <button class="batch-btn batch-btn-primary" id="batch25Btn" onclick="openDashboard('batch25')">
+              دفعة 25
+            </button>
+            <button class="batch-btn batch-btn-secondary" id="batch26Btn" onclick="openDashboard('batch26')">
+              دفعة 26
+            </button>
+          </div>
+        </div>
+        <!-- Left Side: Logo -->
+        <div class="landing-logo-section">
+          <img src="logo.png" alt="شعار جامعة الأمير سطام بن عبد العزيز للمنح" class="landing-logo" id="logoImage">
+        </div>
+      </div>
+    </div>
+    <footer class="landing-footer">
+      <p class="landing-footer-text">البيانات المعروضة تمثل نتائج استبيان تطوعي وتتغير سنويًا حسب التنافس</p>
+    </footer>
+  </div>
+
+  <!-- ==========================================
+       Dashboard Page
+       ========================================== -->
+  <div class="dashboard-page" id="dashboardPage">
+    <!-- Sticky Header -->
+    <header class="dashboard-header">
+      <div class="dashboard-header-titles">
+        <h1 class="dashboard-title">موزونات المقبولين لطلبة المنح</h1>
+        <p class="dashboard-subtitle" id="dashboardSubtitle">جامعة الأمير سطام بن عبد العزيز - دفعة 26</p>
+      </div>
+      <button class="back-btn" id="backBtn" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        الرجوع
+      </button>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="tab-nav" id="tabNav">
+      <button class="tab-btn active" data-tab="overview" onclick="switchTab('overview')">
+        <span class="tab-icon">📊</span>
+        نظرة عامة
+      </button>
+      <button class="tab-btn" data-tab="nationalities" onclick="switchTab('nationalities')">
+        <span class="tab-icon">📈</span>
+        الموزونات
+      </button>
+      <button class="tab-btn" data-tab="comparison" onclick="switchTab('comparison')">
+        <span class="tab-icon">⚖️</span>
+        مقارنة
+      </button>
+      <button class="tab-btn" data-tab="faq" onclick="switchTab('faq')">
+        <span class="tab-icon">❓</span>
+        الأسئلة الشائعة
+      </button>
+    </nav>
+
+    <!-- Dashboard Content Area -->
+    <div class="dashboard-content">
+
+      <!-- ===== OVERVIEW TAB ===== -->
+      <div class="tab-panel active" id="panel-overview">
+        <!-- Primary Metric Cards -->
+        <h2 class="section-title"><span class="icon">📌</span> الإحصائيات الرئيسية</h2>
+        <div class="primary-cards-grid" id="primaryCards">
+          <!-- Filled by JS -->
+        </div>
+
+        <!-- Secondary Metric Cards -->
+        <div class="secondary-cards-grid" id="secondaryCards">
+          <!-- Filled by JS -->
+        </div>
+
+      </div>
+
+      <!-- ===== NATIONALITIES (Now الموزونات) TAB ===== -->
+      <div class="tab-panel" id="panel-nationalities">
+        <h2 class="section-title"><span class="icon">📈</span> تفاصيل الموزونات</h2>
+        <div class="nationalities-grid mt-lg" id="nationalitiesGrid">
+          <!-- Filled by JS -->
+        </div>
+        <div id="nationalityDetailPanel" style="display:none;">
+          <!-- Filled by JS when a nationality card is clicked -->
+        </div>
+      </div>
+
+
+
+      <!-- ===== COMPARISON TAB ===== -->
+      <div class="tab-panel" id="panel-comparison">
+        <h2 class="section-title"><span class="icon">⚖️</span> مقارنة الفروع</h2>
+        <div class="comparison-container">
+          <div class="comparison-selector">
+            <span class="filter-label">اختر الفرع الأول:</span>
+            <select class="filter-select" id="compareBranch1" onchange="renderComparison()">
+            </select>
+            <span class="filter-label">اختر الفرع الثاني:</span>
+            <select class="filter-select" id="compareBranch2" onchange="renderComparison()">
+            </select>
+          </div>
+          <div class="comparison-results" id="comparisonResults">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== FAQ TAB ===== -->
+      <div class="tab-panel" id="panel-faq">
+        <h2 class="section-title"><span class="icon">❓</span> الأسئلة الشائعة</h2>
+        <div class="faq-list" id="faqList">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
