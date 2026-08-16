@@ -93,6 +93,121 @@
 }
 
 /* ============================================
+   Dark Mode (الوضع الليلي)
+   ============================================ */
+:root[data-theme="dark"] {
+  /* Primary Colors — brightened for contrast on dark backgrounds */
+  --primary: #5fb3ac;
+  --primary-dark: #3c7974;
+  --primary-darker: #1a3833;
+  --primary-light: #7fc9c2;
+  --primary-lighter: #a8ddd7;
+  --primary-50: rgba(95, 179, 172, 0.08);
+  --primary-100: rgba(95, 179, 172, 0.16);
+  --primary-200: rgba(95, 179, 172, 0.28);
+  --primary-300: rgba(95, 179, 172, 0.4);
+
+  /* Background Colors */
+  --bg-main: #101c19;
+  --bg-white: #182723;
+  --bg-card: #182723;
+  --bg-card-hover: #1f322c;
+  --bg-section: #1b2b26;
+  --bg-glass: rgba(24, 39, 35, 0.75);
+
+  /* Text Colors */
+  --text-primary: #eef7f5;
+  --text-secondary: #b7d4cd;
+  --text-muted: #82a49d;
+  --text-light: #5c7c76;
+  --text-white: #ffffff;
+
+  /* Accent Colors */
+  --accent-gold: #e2bd6f;
+  --accent-gold-light: #f0d68a;
+  --accent-red: #e88785;
+  --accent-green: #5fb3ac;
+  --accent-blue: #6fb3cc;
+
+  /* Gender Colors */
+  --male-color: #6fb3cc;
+  --male-bg: rgba(111, 179, 204, 0.15);
+  --female-color: #dd88a8;
+  --female-bg: rgba(221, 136, 168, 0.15);
+
+  /* Shadows — stronger so cards still separate from the dark background */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 16px 55px rgba(0, 0, 0, 0.55);
+  --shadow-primary: 0 4px 20px rgba(95, 179, 172, 0.3);
+  --shadow-card: 0 2px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Keep the title text-clip gradient bright/legible against a dark background */
+:root[data-theme="dark"] .landing-main-title {
+  background: linear-gradient(135deg, var(--primary-lighter), var(--primary-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ============================================
+   Theme Toggle (الوضع الليلي)
+   ============================================ */
+.theme-toggle-btn {
+  position: fixed;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 10001;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--primary-200);
+  border-radius: var(--radius-full);
+  color: var(--primary);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.theme-icon-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.theme-icon-moon {
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+}
+
+:root[data-theme="dark"] .theme-icon-sun {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+}
+
+:root[data-theme="dark"] .theme-icon-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* ============================================
    Global Reset & Base
    ============================================ */
 *,
@@ -120,6 +235,7 @@ body {
   max-width: 100%;
   margin: 0;
   padding: 0;
+  transition: background-color var(--transition-base), color var(--transition-base);
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
