@@ -226,6 +226,10 @@ const faqData = [
   {
     question: "كيف تم جمع هذه البيانات؟",
     answer: "تم جمعها عبر استبيان تطوعي شارك فيه الطلاب المقبولين في مجموعة آرام ومجموعة طالب المنح بجامعة الأمير سطام بن عبد العزيز."
+  },
+  {
+    question: "لدي استفسارات أخرى، أين يمكنني الاستفسار عنها؟",
+    answer: 'يمكنك الاستفسار أكثر في قروب طلاب المنح <a href="https://t.me/psau_scholarship_student" target="_blank" rel="noopener noreferrer">https://t.me/psau_scholarship_student</a>'
   }
 ];
 
@@ -256,11 +260,20 @@ document.addEventListener('DOMContentLoaded', () => {
   checkDisclaimer();
   populateBranchSelects();
   renderFAQ();
+  updateHeaderHeightVar();
 });
+
+window.addEventListener('resize', updateHeaderHeightVar);
+
+function updateHeaderHeightVar() {
+  const header = document.querySelector('.dashboard-header');
+  if (!header) return;
+  document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+}
 
 // --- Modal Logic ---
 function checkDisclaimer() {
-  const hasSeenDisclaimer = localStorage.getItem('psau_disclaimer_seen');
+  const hasSeenDisclaimer = sessionStorage.getItem('psau_disclaimer_seen');
   if (!hasSeenDisclaimer) {
     const modal = document.getElementById('disclaimerModal');
     modal.classList.add('active');
@@ -270,7 +283,7 @@ function checkDisclaimer() {
 function closeDisclaimer() {
   const modal = document.getElementById('disclaimerModal');
   modal.classList.remove('active');
-  localStorage.setItem('psau_disclaimer_seen', 'true');
+  sessionStorage.setItem('psau_disclaimer_seen', 'true');
 }
 
 // --- Navigation Logic ---
@@ -290,6 +303,7 @@ function openDashboard(batchId) {
   
   // Render Data
   switchTab('overview');
+  updateHeaderHeightVar();
 }
 
 function goBack() {
