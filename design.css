@@ -454,7 +454,8 @@ img {
    Landing Page
    ============================================ */
 .landing-page {
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   background: var(--bg-main);
@@ -667,6 +668,52 @@ img {
   height: 14px;
   color: #229ED9;
   flex-shrink: 0;
+}
+
+/* Keep the landing page fully visible with no scrolling on short viewports */
+@media (max-height: 700px) {
+  .landing-logo {
+    max-height: 16vh;
+  }
+
+  .landing-main-title {
+    font-size: var(--font-2xl);
+  }
+
+  .landing-subtitle {
+    font-size: var(--font-base);
+  }
+
+  .landing-wrapper {
+    gap: var(--space-sm);
+  }
+
+  .landing-text-section {
+    gap: 6px;
+  }
+
+  .landing-buttons {
+    margin-top: var(--space-xs);
+    gap: var(--space-sm);
+  }
+
+  .batch-btn {
+    padding: 10px var(--space-lg);
+    font-size: var(--font-base);
+  }
+
+  .landing-content {
+    padding: var(--space-sm);
+  }
+
+  .landing-footer {
+    padding: var(--space-xs) var(--space-md);
+  }
+
+  .landing-footer-text {
+    font-size: 0.68rem;
+    padding: 6px var(--space-sm);
+  }
 }
 
 /* Site Footer (Dashboard Page) */
@@ -1509,11 +1556,12 @@ img {
   .landing-wrapper {
     flex-direction: column-reverse;
     text-align: center;
-    gap: var(--space-xl);
+    gap: var(--space-md);
   }
 
   .landing-text-section {
     align-items: center;
+    gap: var(--space-sm);
   }
 
   .landing-main-title {
@@ -1521,18 +1569,30 @@ img {
   }
 
   .landing-logo {
-    width: 320px;
+    width: auto;
+    max-width: 220px;
+    max-height: 20vh;
   }
 
   .landing-buttons {
     flex-direction: column;
     width: 100%;
+    margin-top: var(--space-sm);
   }
 
   .batch-btn {
     width: 100%;
     justify-content: center;
     text-align: center;
+    padding: var(--space-sm) var(--space-2xl);
+  }
+
+  .landing-content {
+    padding: var(--space-md);
+  }
+
+  .landing-footer {
+    padding: var(--space-sm) var(--space-md);
   }
 
   .primary-cards-grid {

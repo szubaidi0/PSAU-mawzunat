@@ -106,6 +106,102 @@ const dashboardData = {
       { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – هندسة الحاسب", gender: "ذكر", high: 99.000, avg: 95.344, med: 96.332, low: 85.950 },
       { branch: "فرع وادي الدواسر", major: "دبلوم ذكاء الأعمال وتحليل البيانات", gender: "أنثى", high: 76.030, avg: 76.030, med: 76.030, low: 76.030 },
     ],
+    // Per-nationality score rows (from "Major Nationality Summery" sheet) — used by the
+    // nationality detail table so it shows only that nationality's actual score rows,
+    // instead of every score in branches the nationality happens to appear in.
+    natScores: [
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – العلوم والدراسات الإنسانية", nationality: "إرتريا", gender: "أنثى", high: 98.910, avg: 98.910, low: 98.910 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – العلوم والدراسات الإنسانية", nationality: "اليمن", gender: "أنثى", high: 95.816, avg: 91.951, low: 89.360 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – العلوم والدراسات الإنسانية", nationality: "اليمن", gender: "ذكر", high: 90.560, avg: 86.169, low: 78.308 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – العلوم والدراسات الإنسانية", nationality: "سوريا", gender: "ذكر", high: 94.540, avg: 94.540, low: 94.540 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – العلوم والدراسات الإنسانية", nationality: "فلسطين", gender: "ذكر", high: 80.990, avg: 80.990, low: 80.990 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – العلوم والدراسات الإنسانية", nationality: "قبائل نازحة", gender: "أنثى", high: 88.180, avg: 84.560, low: 80.000 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – العلوم والدراسات الإنسانية", nationality: "مصر", gender: "أنثى", high: 95.560, avg: 95.560, low: 95.560 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – العلوم والدراسات الإنسانية", nationality: "موريتانيا", gender: "أنثى", high: 95.100, avg: 95.100, low: 95.100 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – الهندسة العامة", nationality: "الأردن", gender: "ذكر", high: 99.310, avg: 98.635, low: 97.960 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – الهندسة العامة", nationality: "السودان", gender: "أنثى", high: 99.180, avg: 98.096, low: 96.907 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – الهندسة العامة", nationality: "السودان", gender: "ذكر", high: 97.369, avg: 97.212, low: 97.055 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – الهندسة العامة", nationality: "اليمن", gender: "أنثى", high: 99.400, avg: 98.694, low: 97.988 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – الهندسة العامة", nationality: "اليمن", gender: "ذكر", high: 98.457, avg: 97.601, low: 96.640 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – الهندسة العامة", nationality: "سوريا", gender: "أنثى", high: 97.350, avg: 97.350, low: 97.350 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – الهندسة العامة", nationality: "سوريا", gender: "ذكر", high: 99.300, avg: 98.210, low: 96.800 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – الهندسة العامة", nationality: "فلسطين", gender: "أنثى", high: 98.500, avg: 97.394, low: 96.288 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – الهندسة العامة", nationality: "فلسطين", gender: "ذكر", high: 98.200, avg: 97.867, low: 97.600 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – الهندسة العامة", nationality: "مصر", gender: "ذكر", high: 99.179, avg: 97.934, low: 96.689 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "أفغانستان", gender: "ذكر", high: 97.500, avg: 97.500, low: 97.500 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "الأردن", gender: "أنثى", high: 98.579, avg: 98.579, low: 98.579 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "الأردن", gender: "ذكر", high: 99.694, avg: 98.285, low: 97.574 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "السودان", gender: "أنثى", high: 96.764, avg: 96.764, low: 96.764 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "السودان", gender: "ذكر", high: 97.274, avg: 97.274, low: 97.274 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "اليمن", gender: "أنثى", high: 98.790, avg: 97.558, low: 96.394 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "اليمن", gender: "ذكر", high: 98.890, avg: 98.220, low: 97.300 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "بنجلاديش", gender: "أنثى", high: 98.810, avg: 98.810, low: 98.810 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "سوريا", gender: "أنثى", high: 98.032, avg: 97.504, low: 97.000 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "سوريا", gender: "ذكر", high: 99.192, avg: 98.246, low: 96.790 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "فلسطين", gender: "أنثى", high: 98.130, avg: 98.120, low: 98.110 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "فلسطين", gender: "ذكر", high: 99.700, avg: 99.700, low: 99.700 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "مصر", gender: "أنثى", high: 99.594, avg: 98.540, low: 97.300 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "مصر", gender: "ذكر", high: 96.790, avg: 96.790, low: 96.790 },
+      { branch: "فرع الخرج (الرئيسي)", major: "السنة التحضيرية – هندسة وعلوم الحاسب", nationality: "نيجيريا", gender: "أنثى", high: 96.740, avg: 96.740, low: 96.740 },
+      { branch: "فرع الخرج (الرئيسي)", major: "دبلوم إدارة المستودعات وسلاسل الإمداد", nationality: "اليمن", gender: "أنثى", high: 83.000, avg: 83.000, low: 83.000 },
+      { branch: "فرع الخرج (الرئيسي)", major: "دبلوم البرمجة وعلوم الحاسب", nationality: "اليمن", gender: "أنثى", high: 95.460, avg: 95.460, low: 95.460 },
+      { branch: "فرع الخرج (الرئيسي)", major: "دبلوم المحاسبة والضرائب", nationality: "اليمن", gender: "أنثى", high: 93.180, avg: 88.892, low: 84.603 },
+      { branch: "فرع الخرج (الرئيسي)", major: "دبلوم الموارد البشرية", nationality: "العراق", gender: "أنثى", high: 86.340, avg: 86.340, low: 86.340 },
+      { branch: "فرع الخرج (الرئيسي)", major: "دبلوم الموارد البشرية", nationality: "اليمن", gender: "أنثى", high: 85.220, avg: 85.220, low: 85.220 },
+      { branch: "فرع الخرج (الرئيسي)", major: "دبلوم تقنية المختبرات", nationality: "السودان", gender: "ذكر", high: 85.000, avg: 85.000, low: 85.000 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال", nationality: "الأردن", gender: "أنثى", high: 96.600, avg: 96.600, low: 96.600 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال", nationality: "السودان", gender: "أنثى", high: 95.370, avg: 95.370, low: 95.370 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال", nationality: "الهند", gender: "أنثى", high: 97.900, avg: 97.900, low: 97.900 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال", nationality: "اليمن", gender: "أنثى", high: 99.210, avg: 96.915, low: 92.300 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال", nationality: "اليمن", gender: "ذكر", high: 96.080, avg: 92.535, low: 90.000 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال", nationality: "سوريا", gender: "أنثى", high: 97.400, avg: 97.115, low: 96.830 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال", nationality: "سوريا", gender: "ذكر", high: 96.900, avg: 93.750, low: 90.600 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال", nationality: "فلسطين", gender: "أنثى", high: 95.140, avg: 95.070, low: 95.000 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال", nationality: "قبائل نازحة", gender: "ذكر", high: 91.680, avg: 87.757, low: 82.990 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال", nationality: "مصر", gender: "أنثى", high: 97.200, avg: 97.088, low: 96.976 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال – القانون", nationality: "اليمن", gender: "أنثى", high: 95.453, avg: 94.168, low: 91.860 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال – القانون", nationality: "سوريا", gender: "أنثى", high: 92.910, avg: 92.910, low: 92.910 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال – القانون", nationality: "فلسطين", gender: "أنثى", high: 94.270, avg: 94.270, low: 94.270 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية إدارة الأعمال – القانون", nationality: "قبائل نازحة", gender: "ذكر", high: 82.400, avg: 82.400, low: 82.400 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية العلوم والدراسات الإنسانية – اللغة الإنجليزية وآدابها", nationality: "الأردن", gender: "أنثى", high: 94.000, avg: 94.000, low: 94.000 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية العلوم والدراسات الإنسانية – اللغة الإنجليزية وآدابها", nationality: "الأردن", gender: "ذكر", high: 79.370, avg: 79.370, low: 79.370 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية العلوم والدراسات الإنسانية – اللغة الإنجليزية وآدابها", nationality: "السودان", gender: "أنثى", high: 88.230, avg: 87.880, low: 87.530 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية العلوم والدراسات الإنسانية – اللغة الإنجليزية وآدابها", nationality: "الهند", gender: "أنثى", high: 93.800, avg: 93.800, low: 93.800 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية العلوم والدراسات الإنسانية – اللغة الإنجليزية وآدابها", nationality: "اليمن", gender: "أنثى", high: 92.000, avg: 87.058, low: 81.000 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية العلوم والدراسات الإنسانية – اللغة الإنجليزية وآدابها", nationality: "تشاد", gender: "أنثى", high: 87.590, avg: 87.590, low: 87.590 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية العلوم والدراسات الإنسانية – اللغة الإنجليزية وآدابها", nationality: "سوريا", gender: "أنثى", high: 94.261, avg: 92.951, low: 91.640 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية العلوم والدراسات الإنسانية – اللغة الإنجليزية وآدابها", nationality: "قبائل نازحة", gender: "أنثى", high: 81.050, avg: 80.330, low: 79.610 },
+      { branch: "فرع الخرج (الرئيسي)", major: "كلية العلوم والدراسات الإنسانية – اللغة الإنجليزية وآدابها", nationality: "مصر", gender: "أنثى", high: 97.200, avg: 97.200, low: 97.200 },
+      { branch: "فرع الأفلاج", major: "دبلوم إدارة المشاريع السياحية والترفيهية", nationality: "سوريا", gender: "أنثى", high: 85.000, avg: 85.000, low: 85.000 },
+      { branch: "فرع الدلم", major: "ادارة المستودعات وسلاسل الامداد", nationality: "اليمن", gender: "أنثى", high: 84.036, avg: 84.036, low: 84.036 },
+      { branch: "فرع الدلم", major: "الكلية التطبيقية موارد بشرية", nationality: "قبائل نازحة", gender: "أنثى", high: 78.000, avg: 78.000, low: 78.000 },
+      { branch: "فرع الدلم", major: "دبلوم محاسبه", nationality: "اليمن", gender: "أنثى", high: 87.800, avg: 87.800, low: 87.800 },
+      { branch: "فرع الدلم", major: "دبلوم موارد بشرية ( الدلم )", nationality: "السودان", gender: "أنثى", high: 92.701, avg: 92.701, low: 92.701 },
+      { branch: "فرع حوطة بني تميم", major: "بكالوريوس ادارة الأعمال", nationality: "اليمن", gender: "أنثى", high: 93.800, avg: 87.647, low: 81.000 },
+      { branch: "فرع حوطة بني تميم", major: "بكالوريوس ادارة الأعمال", nationality: "اليمن", gender: "ذكر", high: 88.680, avg: 88.680, low: 88.680 },
+      { branch: "فرع حوطة بني تميم", major: "بكالوريوس ادارة الأعمال", nationality: "سوريا", gender: "أنثى", high: 89.786, avg: 85.962, low: 80.000 },
+      { branch: "فرع حوطة بني تميم", major: "بكالوريوس ادارة الأعمال", nationality: "فلسطين", gender: "أنثى", high: 87.101, avg: 87.101, low: 87.101 },
+      { branch: "فرع حوطة بني تميم", major: "بكالوريوس ادارة الأعمال", nationality: "قبائل نازحة", gender: "أنثى", high: 79.674, avg: 79.674, low: 79.674 },
+      { branch: "فرع حوطة بني تميم", major: "بكالوريوس ادارة الأعمال", nationality: "مصر", gender: "أنثى", high: 86.856, avg: 86.856, low: 86.856 },
+      { branch: "فرع حوطة بني تميم", major: "تقنية المختبرات", nationality: "فلسطين", gender: "أنثى", high: 82.970, avg: 82.970, low: 82.970 },
+      { branch: "فرع حوطة بني تميم", major: "دبلوم المحاسبة والضرائب", nationality: "اليمن", gender: "أنثى", high: 85.935, avg: 85.935, low: 85.935 },
+      { branch: "فرع حوطة بني تميم", major: "كلية إدارة الأعمال", nationality: "السودان", gender: "ذكر", high: 84.180, avg: 84.180, low: 84.180 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – الهندسة الكهربائية", nationality: "السودان", gender: "أنثى", high: 96.713, avg: 96.713, low: 96.713 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – الهندسة الكهربائية", nationality: "السودان", gender: "ذكر", high: 97.470, avg: 92.222, low: 88.845 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – الهندسة الكهربائية", nationality: "اليمن", gender: "ذكر", high: 91.600, avg: 91.600, low: 91.600 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – الهندسة الكهربائية", nationality: "تشاد", gender: "أنثى", high: 97.960, avg: 97.960, low: 97.960 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – الهندسة الكهربائية", nationality: "سوريا", gender: "أنثى", high: 97.185, avg: 97.185, low: 97.185 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – الهندسة الكهربائية", nationality: "سوريا", gender: "ذكر", high: 96.920, avg: 96.920, low: 96.920 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – الهندسة الكهربائية", nationality: "مصر", gender: "ذكر", high: 98.800, avg: 98.800, low: 98.800 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – هندسة الحاسب", nationality: "السودان", gender: "أنثى", high: 95.970, avg: 95.970, low: 95.970 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – هندسة الحاسب", nationality: "السودان", gender: "ذكر", high: 97.100, avg: 96.588, low: 95.700 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – هندسة الحاسب", nationality: "اليمن", gender: "ذكر", high: 95.280, avg: 90.615, low: 85.950 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – هندسة الحاسب", nationality: "سوريا", gender: "أنثى", high: 96.500, avg: 96.500, low: 96.500 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – هندسة الحاسب", nationality: "سوريا", gender: "ذكر", high: 99.000, avg: 97.100, low: 95.200 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – هندسة الحاسب", nationality: "فلسطين", gender: "ذكر", high: 97.560, avg: 97.560, low: 97.560 },
+      { branch: "فرع وادي الدواسر", major: "السنة التحضيرية – هندسة الحاسب", nationality: "مصر", gender: "أنثى", high: 97.600, avg: 97.600, low: 97.600 },
+      { branch: "فرع وادي الدواسر", major: "دبلوم ذكاء الأعمال وتحليل البيانات", nationality: "اليمن", gender: "أنثى", high: 76.030, avg: 76.030, low: 76.030 },
+    ],
     branches: ["فرع الخرج (الرئيسي)", "فرع الأفلاج", "فرع الدلم", "فرع حوطة بني تميم", "فرع وادي الدواسر"]
   }
 };
@@ -536,26 +632,22 @@ function openNationalityDetail(natName) {
   
   const flag = countryFlags[nat.name] || '🌍';
   const flagHtml = `<span class="nationality-flag">${flag}</span>`;
-  const scores = dashboardData[currentBatch].scores;
+  const natScores = (dashboardData[currentBatch].natScores || []).filter(s => s.nationality === nat.name);
   const container = document.getElementById('nationalitiesGrid');
   const detailPanel = document.getElementById('nationalityDetailPanel');
-  
+
   // Hide grid, show detail
   container.style.display = 'none';
   detailPanel.style.display = 'block';
-  
-  // Build filter options
+
+  // Build filter options strictly from this nationality's own score rows
+  const natBranches = [...new Set(natScores.map(s => s.branch))];
   let branchOptions = '<option value="all">جميع الفروع</option>';
-  nat.branches.forEach(branch => {
+  natBranches.forEach(branch => {
     branchOptions += `<option value="${branch}">${branch}</option>`;
   });
 
-  // Build major options from scores belonging to this nat's branches
-  const allScores = dashboardData[currentBatch].scores;
-  const natMajors = [...new Set(allScores
-    .filter(s => nat.branches.includes(s.branch))
-    .map(s => s.major)
-  )];
+  const natMajors = [...new Set(natScores.map(s => s.major))];
   let majorOptions = '<option value="all">جميع التخصصات</option>';
   natMajors.forEach(m => { majorOptions += `<option value="${m}">${m}</option>`; });
   
@@ -725,19 +817,18 @@ function filterNationalityScores(natName) {
   const nationalities = dashboardData[currentBatch].nationalities;
   const nat = nationalities.find(n => n.name === natName);
   if (!nat) return;
-  
+
   const branchFilter = document.getElementById('natDetailBranchFilter').value;
   const genderFilter = document.getElementById('natDetailGenderFilter').value;
   const majorFilter = document.getElementById('natDetailMajorFilter').value;
-  const scores = dashboardData[currentBatch].scores;
+  const natScores = (dashboardData[currentBatch].natScores || []).filter(s => s.nationality === nat.name);
   const tbody = document.getElementById('natDetailScoresBody');
-  
-  const filteredScores = scores.filter(score => {
-    const inNatBranches = nat.branches.includes(score.branch);
+
+  const filteredScores = natScores.filter(score => {
     const branchMatch = branchFilter === 'all' || score.branch === branchFilter;
     const genderMatch = genderFilter === 'all' || score.gender === genderFilter;
     const majorMatch = majorFilter === 'all' || score.major === majorFilter;
-    return inNatBranches && branchMatch && genderMatch && majorMatch;
+    return branchMatch && genderMatch && majorMatch;
   });
   
   tbody.innerHTML = '';
